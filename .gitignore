@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+dist/
+build/
+*.spec
+*.exe
+*.db
+*.log
+highscore.txt
+ranking.txt
+.env
