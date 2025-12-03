@@ -23,7 +23,7 @@ class WaveManager:
         self.boss_image = boss_image
         self.bullet_image = bullet_image
         
-        self.current_wave = 1
+        self.current_wave = 0
         self.is_bonus_stage = False
         self.bonus_stage_time_limit = 20000
         self.bonus_stage_start_time = 0

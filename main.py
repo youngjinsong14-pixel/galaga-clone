@@ -244,7 +244,9 @@ class Game:
         self.wave_manager = WaveManager(self.assets.get_image('enemy'), self.assets.get_image('boss'),
                                        self.assets.get_image('enemy_bullet'))
         self.wave_manager.set_player(self.player)
-        self.wave_manager.current_wave = 1
+        self.wave_manager.current_wave = 0
+        self.wave_manager.is_bonus_stage = False
+        self.wave_manager.current_wave = 1  # 강제로 1로 초기화
         self.enemies = self.wave_manager.create_wave(1)
         self.all_sprites.add(self.enemies)
         self.player_being_captured = False
@@ -327,7 +329,7 @@ class Game:
                     else:
                         if event.key == pygame.K_r:
                             self.ranking = self.load_ranking()
-                            self.state = settings.STATE_MENU
+                            self.state = settings.STATE_DIFFICULTY_SELECT  # MENU 대신 DIFFICULTY_SELECT로
                             self.assets.stop_bgm()
                             self.bgm_playing = False
                         elif event.key == pygame.K_F4:
